@@ -47,6 +47,24 @@ A aplicação lê dados de um arquivo CSV na inicialização e os armazena em um
     2017;The Emoji Movie;Columbia Pictures;Michelle Raimo Kouyate;yes
     ```
 
+## Estrutura do Projeto
+
+O projeto segue uma estrutura de pastas organizada por responsabilidades:
+
+```
+.
+├── __tests__/             # Testes de integração
+├── controllers/          # Controladores (lógica de requisição/resposta HTTP)
+├── data/                 # Arquivos de dados (ex: movielist.csv)
+├── services/             # Lógica de negócios da aplicação
+├── utils/                # Funções utilitárias
+├── database.js           # Configuração e acesso ao banco de dados
+├── server.js             # Configuração do servidor Express e rotas principais
+├── package.json          # Metadados do projeto e dependências
+├── README.md             # Este arquivo
+└── ... (outros arquivos de configuração)
+```
+
 ## Executando a Aplicação
 
 Após a instalação das dependências e configuração do arquivo CSV, você pode iniciar o servidor.
@@ -63,6 +81,28 @@ Após a instalação das dependências e configuração do arquivo CSV, você po
   ```
 
 Por padrão, o servidor será iniciado em `http://localhost:3000`. Você verá mensagens no console indicando que o servidor está rodando e os endpoints disponíveis.
+
+## Executando os Testes
+
+O projeto utiliza Jest para testes de integração e Supertest para realizar requisições HTTP à API durante os testes.
+
+1.  **Certifique-se de que as dependências de desenvolvimento estão instaladas:**
+    Se você executou `npm install` (ou `yarn install`) conforme as instruções de configuração, as dependências de teste (`jest`, `supertest`, `cross-env`) já devem estar instaladas.
+
+2.  **Execute os testes:**
+    No diretório raiz do projeto, execute o seguinte comando:
+
+    ```bash
+    npm test
+    ```
+
+    ou, se estiver usando Yarn:
+
+    ```bash
+    yarn test
+    ```
+
+Isso executará a suíte de testes de integração localizada na pasta `__tests__`. Os testes verificam o comportamento dos endpoints da API, incluindo diferentes cenários de filtragem e a lógica de cálculo de intervalos de prêmios dos produtores.
 
 ## Endpoints da API
 

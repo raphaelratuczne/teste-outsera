@@ -218,3 +218,16 @@ export const getMovies = (filters = {}) => {
     });
   });
 };
+
+export const closeDbConnection = () => {
+  return new Promise((resolve, reject) => {
+    db.close((err) => {
+      if (err) {
+        console.error('Erro ao fechar a conexão com o SQLite:', err.message);
+        return reject(err);
+      }
+      // console.log('Conexão com o SQLite fechada.'); // Opcional: log durante testes
+      resolve();
+    });
+  });
+};
